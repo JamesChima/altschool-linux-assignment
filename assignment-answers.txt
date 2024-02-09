@@ -1,0 +1,52 @@
+ASSIGNMENT ANSWERS.
+
+altschool i.e., home directory /home/altschool. The home directory contains the following sub-directories: code, tests, personal, misc. Unless otherwise specified, you are running commands from the home directory. 
+sudo useradd -m altschool
+sudo passwd altschool
+su altschool  (move to home directory.)
+mkdir code tests personal misc
+
+A) Change directory to the tests directory using absolute pathname.
+Ans: cd /home/altschool/tests
+
+B) Change directory to the tests directory using relative pathname.
+Ans: cd ./tests
+
+C) Use echo command to create a file named fileA with text content ‘Hello A’ in the misc directory.
+Ans: touch ./misc/fileA
+echo 'Hello A' > /home/altschool/misc/fileA
+
+D) Create an empty file named fileB in the misc directory. Populate the file with a dummy content afterwards.
+Ans: touch ./misc/fileB
+Vim ./misc/fileB
+
+E) Copy contents of fileA into fileC.
+Ans: cp ./misc/fileA ./misc/fileC
+
+F) Move contents of fileB into fileD.
+Ans: mv  ./misc/fileB ./misc/fileD
+
+G) Create a tar archive called misc.tar for the contents of misc directory.
+Ans: tar -cvf misc.tar misc
+
+H) Compress the tar archive to create a misc.tar.gz file.
+Ans: gzip misc.tar
+
+I) Create a user and force the user to change his/her password upon login.
+Ans: sudo useradd jimmy
+Sudo passwd jimmy
+Sudo passwd --expiry jimmy
+
+J) Lock a users password.
+Ans: sudo passwd -l jimmy
+
+K) Create a user with no login shell.
+Ans: Sudo adduser james --system
+
+L) Disable password based authentication for ssh.
+Ans: sudo vim /etc/ssh/sshd-config
+set password authentication to No
+
+M) Disable root login for ssh.
+Ans: sudo vim /etc/ssh/sshd-config
+Set root log in to no.
